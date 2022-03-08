@@ -22,7 +22,7 @@
     <div>
         <form class="w-50 border rounded p-3">
             <div class="input-group flex-nowrap">
-                <span class="input-group-text w-50 p-2" id="addon-wrapping">Chiffre d'Affaires HT</span>
+                <span class="input-group-text w-50 p-2" id="addon-wrapping">Chiffre d'Affaires Hors Taxes</span>
                 <input type="text" class="form-control" id="caht" placeholder="Chiffre d'Affaires Hors Taxes">
             </div>
             <div class="input-group flex-nowrap">
@@ -30,7 +30,7 @@
                 <input type="text" class="form-control" id="margeRate" placeholder="10 (Marge en %)">
             </div>
             <div class="input-group flex-nowrap">
-                <span class="input-group-text w-50 p-2" id="addon-wrapping">Taux de Charges Fixes</span>
+                <span class="input-group-text w-50 p-2" id="addon-wrapping">Montant des Charges Fixes</span>
                 <input type="text" class="form-control" id="cfAmount" placeholder="Montant Charges Fixes">
             </div>
             <div class="input-group flex-nowrap">
@@ -41,8 +41,16 @@
         </form>
         <div class="w-50 border rounded p-3">
             <div class="input-group flex-nowrap">
+                <span class="input-group-text w-50 p-2" id="addon-wrapping">Charges Variables : </span>
+                <input type="text" class="form-control" id="variableCostView" >
+            </div>
+            <div class="input-group flex-nowrap">
                 <span class="input-group-text w-50 p-2" id="addon-wrapping">Bénéfice : </span>
                 <input type="text" class="form-control" id="benefitView" >
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text w-50 p-2" id="addon-wrapping">Seuil de rentabilité : </span>
+                <input type="text" class="form-control" id="srView" >
             </div>
 
         </div>

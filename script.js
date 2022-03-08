@@ -1,26 +1,42 @@
-let caht =  document.getElementById("caht");
-let margeRate =  document.getElementById("margeRate");
-let cfAmount =  document.getElementById("cfAmount");
 let calcBtn =  document.getElementById("calcBtn");
-let benefitView = document.getElementById("benefitView");
-
-//let mscv = "";
-//let benefit = "";
+let resetBtn = document.getElementById("resetBtn");
 
 function breakEventPoint() {
+
+    let caht =  document.getElementById("caht");
+    let margeRate =  document.getElementById("margeRate");
+    let cfAmount =  document.getElementById("cfAmount");
+    let benefitView = document.getElementById("benefitView");
+    let srView =  document.getElementById("srView");
+    let variableCostView =  document.getElementById("variableCostView");
+
+
+    
     mscv = caht.value*(margeRate.value/100);
     benefit = mscv - cfAmount.value;
     sr = cfAmount.value/(margeRate.value/100);
 
-    benefitView = benefit;
+    variableCostView.value = caht.value - mscv;
+    benefitView.value = benefit;
+    srView.value = sr;
 
-
-
-    console.log(mscv);
-    console.log("bénéfice =", benefit)
-    console.log("Seuil de rentabilité = ", sr  );
 }
 
 calcBtn.addEventListener('click', function(){
-    breakEventPoint();
+    if (caht.value > 0) {
+        breakEventPoint();
+    } else {
+        srView.value = "Vous n'avez pas saisie de CA HT";
+        alert("Vous n'avez pas saisi de Chiffre d'Affaires !")
+    }
+    
+})
+
+resetBtn.addEventListener('click', function(){
+    caht.value = "";
+    margeRate.value = "";
+    cfAmount.value = "";
+    variableCostView.value = "";
+    benefitView.value = "";
+    srView.value = "";
 })
