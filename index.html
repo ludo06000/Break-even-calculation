@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Script -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
     <script defer src="script.js"></script>
     
     <title>Break-even calculation</title>
@@ -19,8 +20,8 @@
 
     </header>
 
-    <div>
-        <form class="w-50 border rounded p-3">
+    <div class="w-75">
+        <form class="w-75 border rounded p-3">
             <div class="input-group flex-nowrap">
                 <span class="input-group-text w-50 p-2" id="addon-wrapping">Chiffre d'Affaires Hors Taxes</span>
                 <input type="text" class="form-control" id="caht" placeholder="Chiffre d'Affaires Hors Taxes">
@@ -42,7 +43,7 @@
 
             </div>
         </form>
-        <div class="w-50 border rounded p-3 mt-5">
+        <div class="w-75 border rounded p-3 mt-5">
             <div class="input-group flex-nowrap">
                 <span class="input-group-text w-50 p-2" id="addon-wrapping">Charges Variables : </span>
                 <input type="text" class="form-control" id="variableCostView" >
@@ -58,6 +59,9 @@
                 <input type="text" class="form-control" id="srView" >
                 <span class="input-group-text p-2 acronym" id="addon-wrapping">€</span>
             </div>
+
+        </div>
+        <div id="graphContainer" class="w-75">
 
         </div>
     </div>
