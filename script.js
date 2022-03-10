@@ -1,6 +1,6 @@
-var calcBtn =  document.getElementById("calcBtn");
-var resetBtn = document.getElementById("resetBtn");
-var graphContainer = document.getElementById("graphContainer");
+let calcBtn =  document.getElementById("calcBtn");
+let resetBtn = document.getElementById("resetBtn");
+let graphContainer = document.getElementById("graphContainer");
 
 function breakEventPoint() {
 
@@ -10,7 +10,13 @@ function breakEventPoint() {
     let benefitView = document.getElementById("benefitView");
     let srView =  document.getElementById("srView");
     let variableCostView =  document.getElementById("variableCostView");
-    
+
+    let element = document.querySelector(".graphSr");
+
+
+    if(element !== null){
+        element.remove(); 
+    }
 
 
     // calcul des données numériques 
@@ -23,8 +29,6 @@ function breakEventPoint() {
     srView.value = sr;
 
     // Données Graphiques
-    //document.querySelector('.graphSr').clear();
-    //document.querySelector("graphSr").remove()
 
     var canvasContainer = document.createElement('canvas');
     canvasContainer.className = 'graphSr'
@@ -32,8 +36,6 @@ function breakEventPoint() {
 
     let canvas = document.querySelector(".graphSr");
     let context = canvas.getContext('2d');
-
-
 
     var data = {
         labels : ['0', caht.value*0.3333, caht.value*0.6666, caht.value, caht.value*1.3333, caht.value*1.6666],
@@ -62,9 +64,9 @@ function breakEventPoint() {
         data : data,
         options : options,
     }
-    var graphSr = new Chart(context, config);
 
-
+    graphSr = new Chart(context, config);
+    
 }
 
 calcBtn.addEventListener('click', function(){
@@ -84,5 +86,7 @@ resetBtn.addEventListener('click', function(){
     variableCostView.value = "";
     benefitView.value = "";
     srView.value = "";
+    let element = document.querySelector(".graphSr");
+    element.remove();
 })
 
