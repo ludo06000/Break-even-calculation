@@ -36,6 +36,7 @@ function breakEventPoint() {
 
     let canvas = document.querySelector(".graphSr");
     let context = canvas.getContext('2d');
+    graphContainer.classList.add('border');
 
     var data = {
         labels : ['0', caht.value*0.3333, caht.value*0.6666, caht.value, caht.value*1.3333, caht.value*1.6666],
@@ -88,5 +89,6 @@ resetBtn.addEventListener('click', function(){
     srView.value = "";
     let element = document.querySelector(".graphSr");
     element.remove();
+    graphContainer.classList.remove('border');
 })
 

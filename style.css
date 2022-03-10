@@ -1,3 +1,18 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    color: #363636;
+}
 .acronym {
     width: 32px;
+}
+
+.container {
+
+    background-color: #f0f1ff;
+}
+
+.boxContainer {
+    background-color: #f1f1fc;
 }
