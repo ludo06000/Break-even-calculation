@@ -1,9 +1,13 @@
+//Recovery of DOM elements
+
 let calcBtn =  document.getElementById("calcBtn");
 let resetBtn = document.getElementById("resetBtn");
 let graphContainer = document.getElementById("graphContainer");
 
+//Break-even and graph calculation function
 function breakEventPoint() {
 
+    //Recovery of DOM elements
     let caht =  document.getElementById("caht");
     let margeRate =  document.getElementById("margeRate");
     let cfAmount =  document.getElementById("cfAmount");
@@ -11,15 +15,16 @@ function breakEventPoint() {
     let srView =  document.getElementById("srView");
     let variableCostView =  document.getElementById("variableCostView");
 
+    /*ecovery of the graph in the DOM. If the graph exists, it will be deleted. 
+    *I created this condition because with ChartJs you can't recreate a new chart, you have to delete it.
+    */
     let element = document.querySelector(".graphSr");
-
-
     if(element !== null){
         element.remove(); 
     }
 
 
-    // calcul des données numériques 
+    // calculation of numerical data 
     mscv = caht.value*(margeRate.value/100);
     benefit = mscv - cfAmount.value;
     sr = cfAmount.value/(margeRate.value/100);
@@ -28,7 +33,7 @@ function breakEventPoint() {
     benefitView.value = benefit;
     srView.value = sr;
 
-    // Données Graphiques
+    // Graphical Data
 
     var canvasContainer = document.createElement('canvas');
     canvasContainer.className = 'graphSr'
@@ -70,6 +75,7 @@ function breakEventPoint() {
     
 }
 
+// Creation of the function click on the Calculate button!
 calcBtn.addEventListener('click', function(){
     if (caht.value > 0) {
         breakEventPoint();
@@ -80,6 +86,7 @@ calcBtn.addEventListener('click', function(){
     
 })
 
+// Creation function click for delete Data
 resetBtn.addEventListener('click', function(){
     caht.value = "";
     margeRate.value = "";
